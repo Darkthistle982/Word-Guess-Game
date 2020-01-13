@@ -83,6 +83,7 @@ function checkInput(letters) {
 function reset() {
     guessesRemaining = 12;
     blanksAndCorrect = [];
+    wrongGuess = [];
     game();
 }
 
