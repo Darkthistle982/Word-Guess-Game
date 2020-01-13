@@ -60,6 +60,7 @@ function guessesLeft() {
 //function to display the current score
 function totalWins() {
     document.getElementById("wins").innerHTML = wins;
+    document.getElementById("losses").innerHTML = losses;
 };
 
 //check and compare function
@@ -95,9 +96,10 @@ function completeGame () {
         wins++;
         document.getElementById("wins").innerHTML = " " + wins;
     } else if (guessesRemaining === 0) {
-
+        losses++;
+        reset();
     }
-}
+};
 
 
 
