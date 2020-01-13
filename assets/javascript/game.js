@@ -64,20 +64,20 @@ function totalWins() {
 };
 
 //check and compare function
-function checkInput(letters) {
+function checkInput(letter) {
     letterInWord = false;
     for (var i = 0; i < blanks; i++) {
-        if (selectedWord[i] == letterInWord) {
+        if (selectedWord[i] == letter) {
             letterInWord = true;
         }
     } if (letterInWord) {
         for (var i = 0; i < blanks; i++) {
-            if (selectedWord[i] == letterInWord) {
-                blankAndCorrect[i] = letterInWord;
+            if (selectedWord[i] == letter) {
+                blankAndCorrect[i] = letter;
             }
         }
     } else {
-        wrongGuess.push(letterInWord);
+        wrongGuess.push(letter);
         guessesRemaining--;
     }
 };
@@ -98,6 +98,7 @@ function completeGame () {
     } else if (guessesRemaining === 0) {
         losses++;
         reset();
+        document.getElementById("losses").innerHTML = " " + losses;
     }
 };
 
