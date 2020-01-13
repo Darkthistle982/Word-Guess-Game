@@ -9,22 +9,21 @@ var wordSelectionArray = [
 var guessesRemaining = 12;
 //variable to hold the randomly selected word
 var selectedWord;
-//variable to hold the split out word as an array
-var splitWord = [];
 
 
 //function to choose a word from the array
 function getWord() {
     wordInt = Math.floor((Math.random)() * wordSelectionArray.length);
     selectedWord = wordSelectionArray[wordInt];
-    console.log(selectedWord);
 }
-//funciton to split the random word into an array of letters
- function wordSplit() {
- var splitUpWords = selectedWord.split("");
- console.log(splitUpWords);
+    //funciton to split the random word into an array of letters
+    function wordSplit() {
+        var letters = selectedWord.split("");
+        console.log(letters);
+        
+};
+    
 
-}
 //function to display the guesses remaining
 function guessesLeft() {
     document.getElementById("guesses-remaining").innerHTML = guessesRemaining;
@@ -38,4 +37,5 @@ getWord();
 guessesLeft();
 totalWins();
 wordSplit();
+console.log(selectedWord);
 // console.log();
