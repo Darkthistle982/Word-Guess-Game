@@ -1,4 +1,8 @@
 body {
-    background-image: url("../images/jeff-finley-bK8Wlaq7NaA-unsplash.jpg");
+    background-image: url("../images/jake-hinds-LzhKgc9sBKg-unsplash.jpg");
     width: 100%;
+    font-family: 'Berkshire Swash', cursive;
+}
+section {
+    background-color: rgb(192, 188, 192);
 }
