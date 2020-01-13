@@ -13,8 +13,8 @@ var selectedWord;
 var isLetter = ["abcdefghijklmnopqrstuvwxyz"];
 //variable to store number of blanks
 var blanks = 0;
-
-
+//var to store blanks with the correct word
+var blankAndCorrect = [];
 
 
 //function to choose a word from the array
@@ -26,22 +26,26 @@ function getWord() {
 function wordSplit() {
     var letters = selectedWord.split("");
     console.log(letters);
-
 };
 
-
+function makeBlanks() {
+    blanks = selectedWord.length;
+    for (var i = 0; i < blanks; i++) {
+        blankAndCorrect.push("_");
+    } document.getElementById("current-word").innerHTML = " " + blankAndCorrect.join(" ");
+};
 //function to display the guesses remaining
 function guessesLeft() {
     document.getElementById("guesses-remaining").innerHTML = guessesRemaining;
-}
+};
 
 //function to display the current score
 function totalWins() {
     document.getElementById("wins").innerHTML = wins;
-}
+};
 getWord();
+wordSplit();
 guessesLeft();
 totalWins();
-wordSplit();
+makeBlanks();
 console.log(selectedWord);
-// console.log();
