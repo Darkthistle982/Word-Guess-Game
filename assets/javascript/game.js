@@ -9,13 +9,14 @@ var wordSelectionArray = [
 var guessesRemaining = 12;
 //variable to hold the randomly selected word
 var selectedWord;
-//variable to identify a letter
-var isLetter = ["abcdefghijklmnopqrstuvwxyz"];
 //variable to store number of blanks
 var blanks = 0;
 //var to store blanks with the correct word
 var blankAndCorrect = [];
+//var to hold the split out array of the randomly selected word. 
 var letters;
+//var to hold the incorrect letter guesses when input by the user.
+var wrongGuess = [];
 
 
 function game() {
@@ -60,6 +61,30 @@ function totalWins() {
     document.getElementById("wins").innerHTML = wins;
 };
 
+//check and compare function
+function checkInput(letters) {
+    letterInWord = false;
+    for (var i = 0; i < blanks; i++) {
+        if (selectedWord[i] == letter) {
+            letterInWord = true;
+        }
+    } if (letterInWord) {
+        for (var i = 0; i < blanks; i++) {
+            if (selectedWord[i] == letter) {
+                blankAndCorrect[i] = letter;
+            }
+        }
+    } else {
+
+    }
+}
+
+//function to start the game over
+function reset() {
+    guessesRemaining = 12;
+    blanksAndCorrect = [];
+    game();
+}
 
 game();
 
