@@ -65,17 +65,18 @@ function totalWins() {
 function checkInput(letters) {
     letterInWord = false;
     for (var i = 0; i < blanks; i++) {
-        if (selectedWord[i] == letter) {
+        if (selectedWord[i] == letterInWord) {
             letterInWord = true;
         }
     } if (letterInWord) {
         for (var i = 0; i < blanks; i++) {
-            if (selectedWord[i] == letter) {
-                blankAndCorrect[i] = letter;
+            if (selectedWord[i] == letterInWord) {
+                blankAndCorrect[i] = letterInWord;
             }
         }
     } else {
-
+        wrongGuess.push(letterInWord);
+        guessesRemaining--;
     }
 }
 
@@ -89,3 +90,10 @@ function reset() {
 
 game();
 
+document.onkeyup = function (event) {
+    guesses = String.fromCharCode(event.keyCode).toLowerCase();
+    checkInput(guesses);
+    // winLossCompare();
+    console.log(guesses);
+    document.getElementById("letters-guessed").innerHTML = " " + wrongGuess.join(" ");
+}
