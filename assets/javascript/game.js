@@ -1,5 +1,6 @@
 // start the game with a score of zero
 var wins = 0;
+var losses = 0;
 // words to guess will be selected from here
 var wordSelectionArray = [
     "adventure", "bandit", "battleaxe", "battlefield", "beholder", "bugbear", "castle", "catapult", "cleric", "dragon", "dungeon",
@@ -14,7 +15,7 @@ var blanks = 0;
 //var to store blanks with the correct word
 var blankAndCorrect = [];
 //var to hold the split out array of the randomly selected word. 
-var letters;
+var letters = [];
 //var to hold the incorrect letter guesses when input by the user.
 var wrongGuess = [];
 
@@ -78,7 +79,7 @@ function checkInput(letters) {
         wrongGuess.push(letterInWord);
         guessesRemaining--;
     }
-}
+};
 
 //function to start the game over
 function reset() {
@@ -86,7 +87,19 @@ function reset() {
     blanksAndCorrect = [];
     wrongGuess = [];
     game();
+};
+
+//function to check wins/losses
+function completeGame () {
+    if (letters.toString() == blankAndCorrect.toString()) {
+        wins++;
+        document.getElementById("wins").innerHTML = " " + wins;
+    } else if (guessesRemaining === 0) {
+
+    }
 }
+
+
 
 game();
 
