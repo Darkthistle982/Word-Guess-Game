@@ -28,10 +28,10 @@ function game() {
         blankAndCorrect.push("_");
     } 
     document.getElementById("current-word").innerHTML = " " + blankAndCorrect.join("  ");
-    console.log(selectedWord);
-    console.log(letters);
-    console.log(blanks);
-    console.log(blankAndCorrect);
+    // console.log(selectedWord);
+    // console.log(letters);
+    // console.log(blanks);
+    // console.log(blankAndCorrect);
 };
 
 //function to start the game over
@@ -85,6 +85,6 @@ document.onkeyup = function (event) {
     guesses = String.fromCharCode(event.keyCode).toLowerCase();
     checkInput(guesses);
     completeGame();
-    console.log(guesses);
+    // console.log(guesses);
     document.getElementById("letters-guessed").innerHTML = " " + wrongGuess.join(" ");
 }
