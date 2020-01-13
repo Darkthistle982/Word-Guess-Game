@@ -15,6 +15,23 @@ var isLetter = ["abcdefghijklmnopqrstuvwxyz"];
 var blanks = 0;
 //var to store blanks with the correct word
 var blankAndCorrect = [];
+var letters;
+
+
+function game() {
+    getWord();
+    wordSplit();
+    makeBlanks();
+    guessesLeft();
+    totalWins();
+    console.log(selectedWord);
+    console.log(letters);
+    console.log(blanks);
+    console.log(blankAndCorrect);
+    console.log(guessesRemaining);
+
+};
+
 
 
 //function to choose a word from the array
@@ -24,8 +41,7 @@ function getWord() {
 }
 //funciton to split the random word into an array of letters
 function wordSplit() {
-    var letters = selectedWord.split("");
-    console.log(letters);
+    letters = selectedWord.split("");
 };
 
 function makeBlanks() {
@@ -43,9 +59,7 @@ function guessesLeft() {
 function totalWins() {
     document.getElementById("wins").innerHTML = wins;
 };
-getWord();
-wordSplit();
-guessesLeft();
-totalWins();
-makeBlanks();
-console.log(selectedWord);
+
+
+game();
+
