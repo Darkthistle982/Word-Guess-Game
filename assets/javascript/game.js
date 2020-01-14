@@ -59,9 +59,18 @@ function checkInput(letter) {
                 blankAndCorrect[i] = letter;
             }
         }
+    } if (letterInWord) {
+        for (var i = 0; i < alreadyGuessedLetters.length; i++) {
+            if (selectedWord[i] !== letter) {
+                alreadyGuessedLetters[i] = letter;
+                return;
+            }
+        }
     } else {
         wrongGuess.push(letter);
+        alreadyGuessedLetters.push(letter);
         guessesRemaining--;
+        console.log(alreadyGuessedLetters);
     }
 };
 
