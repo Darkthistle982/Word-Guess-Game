@@ -19,7 +19,6 @@ var wordSelectionArray = [
     //variable to hold number of guesses remaining
     var guessesRemaining = 12;
 
-
 function game() {
     selectedWord = wordSelectionArray[Math.floor(Math.random() * wordSelectionArray.length)];
     letters = selectedWord.split("");
@@ -61,7 +60,6 @@ function checkInput(letter) {
     }
 };
 
-
 //function to check wins/losses
 function completeGame () {
     if (letters.toString() == blankAndCorrect.toString()) {
@@ -77,8 +75,6 @@ function completeGame () {
     document.getElementById("current-word").innerHTML = " " + blankAndCorrect.join(" ");
     document.getElementById("guesses-remaining").innerHTML = " " + guessesRemaining;
 };
-
-
 
 game();
 
