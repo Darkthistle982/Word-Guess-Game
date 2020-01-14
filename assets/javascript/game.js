@@ -66,6 +66,7 @@ function checkInput(letter) {
 function completeGame () {
     if (letters.toString() == blankAndCorrect.toString()) {
         wins++;
+        document.getElementById("correct-answer-message").innerHTML = "Great Job! " + selectedWord.toLocaleUpperCase() + "  was the word!" ;
         reset();
         document.getElementById("wins").innerHTML = " " + wins;
     } else if (guessesRemaining === 0) {
@@ -82,7 +83,7 @@ function completeGame () {
 game();
 
 document.onkeyup = function (event) {
-    guesses = String.fromCharCode(event.keyCode).toLowerCase();
+    var guesses = String.fromCharCode(event.keyCode).toLowerCase();
     checkInput(guesses);
     completeGame();
     // console.log(guesses);
