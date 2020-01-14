@@ -18,6 +18,10 @@ var wordSelectionArray = [
     var losses = 0;
     //variable to hold number of guesses remaining
     var guessesRemaining = 12;
+    //array for guessed letters
+    var alreadyGuessedLetters = [];
+    //variable to hold the background music
+    var myMusic = document.getElementById("background-music");
 
 function game() {
     selectedWord = wordSelectionArray[Math.floor(Math.random() * wordSelectionArray.length)];
@@ -27,6 +31,7 @@ function game() {
         blankAndCorrect.push("_");
     } 
     document.getElementById("current-word").innerHTML = " " + blankAndCorrect.join("  ");
+    myMusic.play();
     // console.log(selectedWord);
     // console.log(letters);
     // console.log(blanks);
