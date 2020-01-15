@@ -18,8 +18,6 @@ var wins = 0;
 var losses = 0;
 //variable to hold number of guesses remaining
 var guessesRemaining = 12;
-//array for guessed letters
-var alreadyGuessedLetters = [];
 //variable to hold the background music
 var myMusic = document.getElementById("background-music");
 
@@ -68,9 +66,7 @@ function checkInput(letter) {
     else {
         wrongGuess.push(letter);
         wrongGuess.includes(letter);
-        // alreadyGuessedLetters.push(letter);
         guessesRemaining--;
-        // console.log(alreadyGuessedLetters);
     };
 }
 //function to check wins/losses
