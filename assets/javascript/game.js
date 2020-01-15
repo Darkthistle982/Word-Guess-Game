@@ -60,13 +60,14 @@ function checkInput(letter) {
                 blankAndCorrect[i] = letter;
             }
         }
-    } 
-    if (letter) {
-        wrongGuess.includes(letter);
-        return;    
+    
+    }
+    if ((wrongGuess.includes(letter)) && (letterInWord === false)) {
+        return;
     } 
     else {
         wrongGuess.push(letter);
+        wrongGuess.includes(letter);
         // alreadyGuessedLetters.push(letter);
         guessesRemaining--;
         // console.log(alreadyGuessedLetters);
