@@ -3,25 +3,25 @@ var wordSelectionArray = [
     "adventure", "bandit", "battleaxe", "battlefield", "beholder", "bugbear", "castle", "catapult", "cleric", "dragon", "dungeon",
     "fairy", "fireball", "giant", "goblin", "knight", "magic", "monster", "necromancer", "owlbear", "paladin", "potion", "quarterstaff",
     "sorcerer", "spells", "sword", "vampire", "warlock", "wizard", "zombie"]
-    //variable to hold the randomly selected word
-    var selectedWord = "";
-    //variable to store number of blanks
-    var blanks = 0;
-    //var to hold the split out array of the randomly selected word. 
-    var letters = [];
-    //var to store blanks with the correct word
-    var blankAndCorrect = [];
-    //var to hold the incorrect letter guesses when input by the user.
-    var wrongGuess = [];
-    // start the game with a score of zero
-    var wins = 0;
-    var losses = 0;
-    //variable to hold number of guesses remaining
-    var guessesRemaining = 12;
-    //array for guessed letters
-    var alreadyGuessedLetters = [];
-    //variable to hold the background music
-    var myMusic = document.getElementById("background-music");
+//variable to hold the randomly selected word
+var selectedWord = "";
+//variable to store number of blanks
+var blanks = 0;
+//var to hold the split out array of the randomly selected word. 
+var letters = [];
+//var to store blanks with the correct word
+var blankAndCorrect = [];
+//var to hold the incorrect letter guesses when input by the user.
+var wrongGuess = [];
+// start the game with a score of zero
+var wins = 0;
+var losses = 0;
+//variable to hold number of guesses remaining
+var guessesRemaining = 12;
+//array for guessed letters
+var alreadyGuessedLetters = [];
+//variable to hold the background music
+var myMusic = document.getElementById("background-music");
 
 function game() {
     selectedWord = wordSelectionArray[Math.floor(Math.random() * wordSelectionArray.length)];
@@ -29,7 +29,7 @@ function game() {
     blanks = selectedWord.length;
     for (var i = 0; i < blanks; i++) {
         blankAndCorrect.push("_");
-    } 
+    }
     document.getElementById("current-word").innerHTML = " " + blankAndCorrect.join("  ");
     myMusic.play();
     // console.log(selectedWord);
@@ -53,32 +53,30 @@ function checkInput(letter) {
         if (selectedWord[i] == letter) {
             letterInWord = true;
         }
-    } if (letterInWord) {
+    } 
+    if (letterInWord) {
         for (var i = 0; i < blanks; i++) {
             if (selectedWord[i] == letter) {
                 blankAndCorrect[i] = letter;
             }
         }
-    } if (letterInWord) {
-        for (var i = 0; i < alreadyGuessedLetters.length; i++) {
-            if (selectedWord[i] !== letter) {
-                alreadyGuessedLetters[i] = letter;
-                return;
-            }
-        }
-    } else {
+    } 
+    if (letter) {
+        wrongGuess.includes(letter);
+        return;    
+    } 
+    else {
         wrongGuess.push(letter);
-        alreadyGuessedLetters.push(letter);
+        // alreadyGuessedLetters.push(letter);
         guessesRemaining--;
-        console.log(alreadyGuessedLetters);
-    }
-};
-
+        // console.log(alreadyGuessedLetters);
+    };
+}
 //function to check wins/losses
-function completeGame () {
+function completeGame() {
     if (letters.toString() == blankAndCorrect.toString()) {
         wins++;
-        document.getElementById("correct-answer-message").innerHTML = "Great Job! " + selectedWord.toLocaleUpperCase() + "  was the word!" ;
+        document.getElementById("correct-answer-message").innerHTML = "Great Job! " + selectedWord.toLocaleUpperCase() + "  was the word!";
         reset();
         document.getElementById("wins").innerHTML = " " + wins;
     } else if (guessesRemaining === 0) {
