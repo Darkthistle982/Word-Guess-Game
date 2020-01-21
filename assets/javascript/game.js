@@ -98,6 +98,6 @@ document.onkeyup = function (event) {
     var guesses = String.fromCharCode(event.keyCode).toLowerCase();
     checkInput(guesses);
     completeGame();
-    console.log(wrongGuess);
+    // console.log(wrongGuess);
     document.getElementById("letters-guessed").innerHTML = " " + wrongGuess.join(" ");
 }
