@@ -59,7 +59,6 @@ function checkInput(letter) {
                 return;
             }
         }
-    
     }
     if ((wrongGuess.includes(letter)) && (letterInWord === false)) {
         return;
@@ -92,6 +91,6 @@ document.onkeyup = function (event) {
     var guesses = String.fromCharCode(event.keyCode).toLowerCase();
     checkInput(guesses);
     completeGame();
-    // console.log(guesses);
+    console.log(wrongGuess);
     document.getElementById("letters-guessed").innerHTML = " " + wrongGuess.join(" ");
 }
