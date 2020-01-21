@@ -3,7 +3,10 @@ var wordSelectionArray = [
     "adventure", "bandit", "battleaxe", "battlefield", "beholder", "bugbear", "castle", "catapult", "cleric", "dragon", "dungeon",
     "fairy", "fireball", "giant", "goblin", "knight", "magic", "monster", "necromancer", "owlbear", "paladin", "potion", "quarterstaff",
     "sorcerer", "spells", "sword", "vampire", "warlock", "wizard", "zombie"]
-//variable to hold the randomly selected word
+//variable to hold the alphabet for the input check function
+var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+    //variable to hold the randomly selected word
 var selectedWord = "";
 //variable to store number of blanks
 var blanks = 0;
@@ -47,6 +50,10 @@ function reset() {
 //check and compare function
 function checkInput(letter) {
     letterInWord = false;
+    var notALetter = !alphabet.includes(letter);
+    if (notALetter === true) {
+            return;
+        }
     for (var i = 0; i < blanks; i++) {
         if (selectedWord[i] == letter) {
             letterInWord = true;
@@ -67,8 +74,8 @@ function checkInput(letter) {
         wrongGuess.push(letter);
         wrongGuess.includes(letter);
         guessesRemaining--;
-    };
-}
+    }
+};
 //function to check wins/losses
 function completeGame() {
     if (letters.toString() == blankAndCorrect.toString()) {
