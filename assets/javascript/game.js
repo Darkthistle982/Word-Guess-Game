@@ -85,6 +85,7 @@ function completeGame() {
         document.getElementById("wins").innerHTML = " " + wins;
     } else if (guessesRemaining === 0) {
         losses++;
+        document.getElementById("correct-answer-message").innerHTML = "Too Bad! " + selectedWord.toLocaleUpperCase() + "  was the word!";
         reset();
         document.getElementById("losses").innerHTML = " " + losses;
     }
