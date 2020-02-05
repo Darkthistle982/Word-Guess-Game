@@ -63,7 +63,6 @@ function checkInput(letter) {
         for (var i = 0; i < blanks; i++) {
             if (selectedWord[i] == letter) {
                 blankAndCorrect[i] = letter;
-                return;
             }
         }
     }
