@@ -1,4 +1,5 @@
 # Fantasy Word Hangman Game
+
 ## Instructions
 Press any key to start.
 The application will register what key is pressed, and compare it to the randomly chosen to word. If the letter exsists in the word, it will be displayed in the current word line.
@@ -11,4 +12,4 @@ I have also utilized Google Fonts, for the primary font.
 I have used Font Awesome for icons. 
 
 
-# Link to live Game here: https://darkthistle982.github.io/Word-Guess-Game/
+### Link to live Game here: https://darkthistle982.github.io/Word-Guess-Game/
